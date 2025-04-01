@@ -1,2 +1,2 @@
 # cacaClicker
-Caca clicker built in lua with LÖVE
+## Caca clicker built in lua with LÖVE
