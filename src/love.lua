@@ -1,0 +1,28 @@
+--
+-- Caca Clicker
+-- love.lua
+--
+
+require("src.window")
+local config = require("src.config")
+local Sprite = require("src.sprite")
+local TiledSprite = require("src.tiledSprite")
+
+local background
+local poopSprite
+
+function love.load()
+    background = TiledSprite.new(config.background, 0.9, 0.9)
+    poopSprite = Sprite.new(config.poopSprite, 150, 300)
+end
+
+function love.draw()
+    background:draw()
+    poopSprite:draw()
+end
+
+function love.mousepressed(x, y, button)
+    if button == 1 and poopSprite:isHovered(x, y) then
+        print("Poop clicked!")
+    end
+end

@@ -3,14 +3,9 @@
 -- window
 --
 
-local Sprite = require("src.sprite")
-local TiledSprite = require("src.tiledSprite")
 local config = require("src.config")
 
-local background
-local poopSprite
-
-local function setupWindow()
+function SetupWindow()
     love.window.setTitle("Caca Clicker")
     love.window.setMode(config.window.width, config.window.height, {
         resizable = config.window.resizable,
@@ -19,19 +14,4 @@ local function setupWindow()
     })
 end
 
-function love.load()
-    setupWindow()
-    background = TiledSprite.new(config.background, 0.9, 0.9)
-    poopSprite = Sprite.new(config.poopSprite, 150, 300)
-end
-
-function love.draw()
-    background:draw()
-    poopSprite:draw()
-end
-
-function love.mousepressed(x, y, button)
-    if button == 1 and poopSprite:isHovered(x, y) then
-        print("Poop clicked!")
-    end
-end
+return SetupWindow()

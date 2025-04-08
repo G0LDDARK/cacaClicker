@@ -3,4 +3,4 @@
 -- main
 --
 
-require("src/window")
+require("src.love")
