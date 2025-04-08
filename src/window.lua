@@ -24,10 +24,10 @@ function love.load()
     background = love.graphics.newImage(config.background)
     background:setFilter("nearest", "nearest")
     love.window.setTitle("Caca Clicker")
-    love.window.setMode(config.width, config.height, {
-        resizable = config.resizable,
-        vsync = config.vsync,
-        fullscreen = config.fullscreen,
+    love.window.setMode(config.window.width, config.window.height, {
+        resizable = config.window.resizable,
+        vsync = config.window.vsync,
+        fullscreen = config.window.fullscreen,
     })
 end
 
