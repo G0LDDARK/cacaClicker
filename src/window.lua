@@ -5,21 +5,10 @@
 
 local Sprite = require("src.sprite")
 local TiledSprite = require("src.tiledSprite")
-local json = require("dkjson")
-local config
+local config = require("src.config")
+
 local background
 local poopSprite
-
-local function loadConfig()
-    local file = io.open("config.json", "r")
-    if file then
-        local content = file:read("*a")
-        file:close()
-        config = json.decode(content)
-    else
-        error("Could not open config.json")
-    end
-end
 
 local function setupWindow()
     love.window.setTitle("Caca Clicker")
@@ -31,9 +20,7 @@ local function setupWindow()
 end
 
 function love.load()
-    loadConfig()
     setupWindow()
-
     background = TiledSprite.new(config.background, 0.9, 0.9)
     poopSprite = Sprite.new(config.poopSprite, 150, 300)
 end
