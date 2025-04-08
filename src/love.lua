@@ -12,8 +12,8 @@ local background
 local poopSprite
 
 function love.load()
-    background = TiledSprite.new(config.background, 0.9, 0.9)
-    poopSprite = Sprite.new(config.poopSprite, 150, 300)
+    background = TiledSprite.new(config.background)
+    poopSprite = Sprite.new(config.poopSprite)
 end
 
 function love.draw()

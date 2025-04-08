@@ -6,12 +6,12 @@
 local Sprite = {}
 Sprite.__index = Sprite
 
-function Sprite.new(imagePath, x, y)
-    local img = love.graphics.newImage(imagePath)
+function Sprite.new(image)
+    local img = love.graphics.newImage(image.asset)
     return setmetatable({
         image = img,
-        x = x,
-        y = y,
+        x = image.x,
+        y = image.y,
         width = img:getWidth(),
         height = img:getHeight()
     }, Sprite)

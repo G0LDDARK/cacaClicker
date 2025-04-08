@@ -6,13 +6,13 @@
 local TiledSprite = {}
 TiledSprite.__index = TiledSprite
 
-function TiledSprite.new(imagePath, scaleX, scaleY)
-    local img = love.graphics.newImage(imagePath)
+function TiledSprite.new(image)
+    local img = love.graphics.newImage(image.asset)
     img:setFilter("nearest", "nearest")
     return setmetatable({
         image = img,
-        scaleX = scaleX or 1,
-        scaleY = scaleY or 1
+        scaleX = image.scaleX or 1,
+        scaleY = image.scaleY or 1
     }, TiledSprite)
 end
 
