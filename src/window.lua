@@ -33,14 +33,6 @@ end
 function love.load()
     loadConfig()
     setupWindow()
-    background = love.graphics.newImage(config.background)
-    background:setFilter("nearest", "nearest")
-    love.window.setTitle("Caca Clicker")
-    love.window.setMode(config.window.width, config.window.height, {
-        resizable = config.window.resizable,
-        vsync = config.window.vsync,
-        fullscreen = config.window.fullscreen,
-    })
 
     background = TiledSprite.new(config.background, 0.9, 0.9)
     poopSprite = Sprite.new(config.poopSprite, 150, 300)
