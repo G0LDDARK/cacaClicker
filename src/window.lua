@@ -3,46 +3,56 @@
 -- window
 --
 
--- local Sprite = require("src.sprite")
--- local background
--- local poop
--- local poopX, poopY
--- local poopWidth, poopHeight
 local Sprite = require("src.sprite")
 local TiledSprite = require("src.tiledSprite")
-
+local json = require("dkjson")
+local config
 local background
-local poop
+local poopSprite
+
+local function loadConfig()
+    local file = io.open("config.json", "r")
+    if file then
+        local content = file:read("*a")
+        file:close()
+        config = json.decode(content)
+    else
+        error("Could not open config.json")
+    end
+end
+
+local function setupWindow()
+    love.window.setTitle("Caca Clicker")
+    love.window.setMode(config.window.width, config.window.height, {
+        resizable = config.window.resizable,
+        vsync = config.window.vsync,
+        fullscreen = config.window.fullscreen,
+    })
+end
 
 function love.load()
+    loadConfig()
+    setupWindow()
+    background = love.graphics.newImage(config.background)
+    background:setFilter("nearest", "nearest")
     love.window.setTitle("Caca Clicker")
-    love.window.setMode(385, 760, {
-        resizable = false,
-        vsync = true,
-        fullscreen = false
+    love.window.setMode(config.window.width, config.window.height, {
+        resizable = config.window.resizable,
+        vsync = config.window.vsync,
+        fullscreen = config.window.fullscreen,
     })
 
-    background = TiledSprite.new("assets/background.png", 0.9, 0.9)
-    poop = Sprite.new("assets/poop.png", 150, 300)
+    background = TiledSprite.new(config.background, 0.9, 0.9)
+    poopSprite = Sprite.new(config.poopSprite, 150, 300)
 end
 
 function love.draw()
-    -- local screenWidth = love.graphics.getWidth()
-    -- local screenHeight = love.graphics.getHeight()
-    -- local scaleX = 0.9
-    -- local scaleY = 0.9
-
-    -- for x = 0, screenWidth, background:getWidth() * scaleX do
-    --     for y = 0, screenHeight, background:getHeight() * scaleY do
-    --         love.graphics.draw(background, x, y, 0, scaleX, scaleY)
-    --     end
-    -- end
     background:draw()
-    poop:draw()
+    poopSprite:draw()
 end
 
 function love.mousepressed(x, y, button)
-    if button == 1 and poop:isHovered(x, y) then
+    if button == 1 and poopSprite:isHovered(x, y) then
         print("Poop clicked!")
     end
 end
