@@ -4,15 +4,30 @@
 --
 
 local background
+local json = require("dkjson")
+local config
+
+local function loadConfig()
+    local file = io.open("config.json", "r")
+    if file then
+        local content = file:read("*a")
+        file:close()
+        config = json.decode(content)
+    else
+        error("Could not open config.json")
+    end
+end
+
 
 function love.load()
-    background = love.graphics.newImage("assets/background.png")
+    loadConfig()
+    background = love.graphics.newImage(config.background)
     background:setFilter("nearest", "nearest")
     love.window.setTitle("Caca Clicker")
-    love.window.setMode(385, 760, {
-        resizable = false,
-        vsync = true,
-        fullscreen = false
+    love.window.setMode(config.width, config.height, {
+        resizable = config.resizable,
+        vsync = config.vsync,
+        fullscreen = config.fullscreen,
     })
 end
 
