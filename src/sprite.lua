@@ -13,12 +13,16 @@ function Sprite.new(image)
         x = image.x,
         y = image.y,
         width = img:getWidth(),
-        height = img:getHeight()
+        height = img:getHeight(),
+        scaleX = image.scaleX or image.scale or 1,
+        scaleY = image.scaleY or image.scale or 1,
+        rotation = image.rotation or 0,
     }, Sprite)
 end
 
 function Sprite:draw()
-    love.graphics.draw(self.image, self.x, self.y)
+    love.graphics.draw(self.image, self.x, self.y, self.rotation,
+        self.scaleX, self.scaleY)
 end
 
 function Sprite:isHovered(mx, my)

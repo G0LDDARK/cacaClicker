@@ -7,14 +7,26 @@
         "vsync": true,
         "fullscreen": false
     },
-    "background": {
-        "asset": "assets/background.png",
-        "scaleX": 0.9,
-        "scaleY": 0.9
+    "backgrounds": {
+        "main": {
+            "asset": "assets/background.png",
+            "scaleX": 0.9,
+            "scaleY": 0.9
+        }
     },
-    "poopSprite": {
-        "asset": "assets/poopSprite.png",
-        "x": 150,
-        "y": 300
+    "sprites": {
+        "poop": {
+            "asset": "assets/poopSprite.png",
+            "x": 50,
+            "y": 300,
+            "scale": 0.2,
+            "scaleX": 1
+        }
+    },
+    "fonts": {
+        "main": {
+            "asset": "assets/fonts/mainFont.ttf",
+            "size": 20
+        }
     }
 }
