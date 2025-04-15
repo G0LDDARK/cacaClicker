@@ -23,6 +23,7 @@ function Sprite.new(image)
         frameHeight = image.frameHeight or img:getHeight(),
         frameX = image.frameX or 0,
         frameY = image.frameY or 0,
+        frameRate = image.frameRate or 5,
         frameCount = 0
     }, Sprite)
 end
@@ -49,7 +50,7 @@ end
 
 function Sprite:Anim()
     self.frameCount = self.frameCount + 1
-    if self.frameCount % 5 > 0 then
+    if self.frameCount % self.frameRate > 0 then
         return
     else
         self.frameCount = 0
