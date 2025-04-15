@@ -9,12 +9,15 @@ local TiledSprite = require("src.tiledSprite")
 
 local background
 local poopSprite
+local chickenSprite
+
 local music
 local clickSound
 
 function love.load()
     background = TiledSprite.new(config.backgrounds.main)
     poopSprite = Sprite.new(config.sprites.poop)
+    chickenSprite = Sprite.new(config.sprites.chicken)
 
     music = love.audio.newSource("assets/musics/mainMusic.ogg", "stream")
     music:setLooping(true)     -- Loop the music
@@ -25,11 +28,13 @@ function love.load()
 end
 
 function love.update(dt)
+    chickenSprite:Anim()
 end
 
 function love.draw()
     background:draw()
     poopSprite:draw()
+    chickenSprite:draw()
 end
 
 function love.mousepressed(x, y, button)

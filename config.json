@@ -21,6 +21,13 @@
             "y": 250,
             "scaleX": 0.5,
             "scaleY": 0.5
+        },
+        "chicken": {
+            "asset": "assets/spritesheets/chicken/ChickenWalking.png",
+            "frameWidth": 20, 
+            "frameHeight": 21,
+            "x":150,
+            "y":21,
         }
     },
     "fonts": {
