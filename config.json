@@ -17,10 +17,10 @@
     "sprites": {
         "poop": {
             "asset": "assets/poopSprite.png",
-            "x": 50,
-            "y": 300,
-            "scale": 0.2,
-            "scaleX": 1
+            "x": 75,
+            "y": 250,
+            "scaleX": 0.5,
+            "scaleY": 0.5
         }
     },
     "fonts": {
