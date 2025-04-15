@@ -29,7 +29,7 @@ end
 
 function Sprite:isHovered(mx, my)
     if ( mx >= self.x and mx <= self.x + self.width * self.scaleX and
-           my >= self.y and my <= self.y + self.height * self.scaleY ) 
+         my >= self.y and my <= self.y + self.height * self.scaleY )
     then
         local r, g, b, a = self.imageData:getPixel(
             (mx - self.x) / self.scaleX,
