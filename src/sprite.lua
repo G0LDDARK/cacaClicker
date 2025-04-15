@@ -19,12 +19,17 @@ function Sprite.new(image)
         scaleX = image.scaleX or image.scale or 1,
         scaleY = image.scaleY or image.scale or 1,
         rotation = image.rotation or 0,
+        frameWidth = image.frameWidth or img:getWidth(),
+        frameHeight = image.frameHeight or img:getHeight(),
+        frameX = image.frameX or 0,
+        frameY = image.frameY or 0
     }, Sprite)
 end
 
 function Sprite:draw()
-    love.graphics.draw(self.image, self.x, self.y, self.rotation,
-        self.scaleX, self.scaleY)
+    love.graphics.draw(self.image,
+        love.graphics.newQuad(self.frameX, self.frameY, self.frameWidth, self.frameHeight, self.width, self.height),
+        self.x, self.y, self.rotation, self.scaleX, self.scaleY)
 end
 
 function Sprite:isHovered(mx, my)
@@ -38,6 +43,21 @@ function Sprite:isHovered(mx, my)
         return a > 0
     else
         return false
+    end
+end
+
+function Sprite:Anim()
+    if (self.frameWidth == self.width)
+    then
+        if (self.frameHeight == self.width)
+        then
+            return
+        else
+            self.frameX = 0
+            self.frameY = (self.frameY + self.frameHeight) % self.height
+        end
+    else
+        self.frameX = (self.frameX + self.frameWidth) % self.width
     end
 end
 
