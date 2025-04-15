@@ -3,7 +3,6 @@
 -- love.lua
 --
 
-require("src.window")
 local config = require("src.config")
 local Sprite = require("src.sprite")
 local TiledSprite = require("src.tiledSprite")
@@ -16,6 +15,9 @@ function love.load()
     poopSprite = Sprite.new(config.sprites.poop)
 end
 
+function love.update(dt)
+end
+
 function love.draw()
     background:draw()
     poopSprite:draw()
@@ -25,4 +27,14 @@ function love.mousepressed(x, y, button)
     if button == 1 and poopSprite:isHovered(x, y) then
         print("Poop clicked!")
     end
+end
+
+function love.keypressed(key)
+    if key == "escape" then
+        love.event.quit()
+    end
+end
+
+function love.quit()
+    print("Game quitted.")
 end

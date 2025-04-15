@@ -4,7 +4,7 @@
         "width": 385,
         "height": 760,
         "resizable": false,
-        "vsync": true,
+        "vsync": false,
         "fullscreen": false
     },
     "backgrounds": {
