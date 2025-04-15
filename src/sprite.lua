@@ -22,7 +22,8 @@ function Sprite.new(image)
         frameWidth = image.frameWidth or img:getWidth(),
         frameHeight = image.frameHeight or img:getHeight(),
         frameX = image.frameX or 0,
-        frameY = image.frameY or 0
+        frameY = image.frameY or 0,
+        frameCount = 0
     }, Sprite)
 end
 
@@ -47,10 +48,15 @@ function Sprite:isHovered(mx, my)
 end
 
 function Sprite:Anim()
-    if (self.frameWidth == self.width)
-    then
-        if (self.frameHeight == self.width)
-        then
+    self.frameCount = self.frameCount + 1
+    if self.frameCount % 5 > 0 then
+        return
+    else
+        self.frameCount = 0
+    end
+
+    if self.frameWidth == self.width then
+        if self.frameHeight == self.width then
             return
         else
             self.frameX = 0
