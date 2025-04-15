@@ -26,8 +26,17 @@
             "asset": "assets/spritesheets/chicken/ChickenWalking.png",
             "frameWidth": 20, 
             "frameHeight": 21,
-            "x":150,
-            "y":21
+            "x":150,  // Position initiale de la sprite
+            "y":21    // Position initiale de la sprite
+        }
+    },
+    "creatures": {
+        "chicken": {
+            "state": "walking",
+            "x": 150,   // Prends la priorité sur le x de la sprite
+            "y": 21,    // Prends la priorité sur le y de la sprite
+            "velocityX": 10,
+            "velocityY": 0
         }
     },
     "fonts": {

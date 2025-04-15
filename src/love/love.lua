@@ -6,10 +6,11 @@
 local config = require("src.config")
 local Sprite = require("src.sprite")
 local TiledSprite = require("src.tiledSprite")
+local Creature = require("src.creature")
 
 local background
 local poopSprite
-local chickenSprite
+local chickenCreature
 
 local music
 local clickSound
@@ -17,7 +18,8 @@ local clickSound
 function love.load()
     background = TiledSprite.new(config.backgrounds.main)
     poopSprite = Sprite.new(config.sprites.poop)
-    chickenSprite = Sprite.new(config.sprites.chicken)
+
+    chickenCreature = Creature:new(config.creatures.chicken, config.sprites.chicken)
 
     music = love.audio.newSource("assets/musics/mainMusic.ogg", "stream")
     music:setLooping(true)     -- Loop the music
@@ -28,13 +30,13 @@ function love.load()
 end
 
 function love.update(dt)
-    chickenSprite:Anim()
+    chickenCreature:update(dt)
 end
 
 function love.draw()
     background:draw()
     poopSprite:draw()
-    chickenSprite:draw()
+    chickenCreature:draw()
 end
 
 function love.mousepressed(x, y, button)
