@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="mybtn">
+            <p>Jouation</p>
+        </button>
+        <button class="mybtn">
+            <p>Optionnage</p>
+        </button>
+        <button class="mybtn">
+            <p>Partirement</p>
+        </button>
+    </div>
+</body>
+
+<style>
+* {
+    padding: 0px;
+    margin: 0px;
+}
+@font-face {
+    font-family: 'mainfont';
+    src: url('fonts/mainFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    height: 80%;
+    width: 33%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.mybtn {
+    background: #e06666;
+    border-radius: 11px;
+    border: 1px transparent solid;
+    padding: 20px 100px;
+    display: inline-block;
+    font: normal bold 33px/1 "Open Sans", sans-serif;
+    text-align: center;
+}
+
+p{
+    font-size: 100px;
+    font-family: 'mainfont', sans-serif;
+    color: #fff;
+
+}
+</style>
+</html>
