@@ -22,8 +22,8 @@ function love.load()
     chickenCreature = Creature:new(config.creatures.chicken, config.sprites.chicken)
 
     music = love.audio.newSource("assets/musics/mainMusic.ogg", "stream")
-    music:setLooping(true)     -- Loop the music
-    music:setVolume(0.5)       -- Set volume (0.0 to 1.0)
+    music:setLooping(true)
+    music:setVolume(0.5)
     music:play()
 
     clickSound = love.audio.newSource("assets/sounds/click.ogg", "static")
@@ -41,7 +41,6 @@ end
 
 function love.mousepressed(x, y, button)
     if button == 1 and poopSprite:isHovered(x, y) then
-        print("Poop clicked!")
         if clickSound:isPlaying() then clickSound:stop() end
         clickSound:play()
     end

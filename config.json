@@ -24,7 +24,7 @@
         },
         "chicken": {
             "asset": "assets/spritesheets/chicken/ChickenWalking.png",
-            "frameWidth": 20, 
+            "frameWidth": 20,
             "frameHeight": 21,
             "x":150,  // Position initiale de la sprite
             "y":21    // Position initiale de la sprite
