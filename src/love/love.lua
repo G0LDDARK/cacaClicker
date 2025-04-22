@@ -8,6 +8,8 @@ local Sprite = require("src.sprite")
 local TiledSprite = require("src.tiledSprite")
 local Creature = require("src.creature")
 
+local jouage
+
 local background
 local sprites = {}
 
@@ -17,6 +19,8 @@ local music
 local clickSound
 
 function love.load()
+    jouage = -1
+
     background = TiledSprite.new(config.backgrounds.main)
 
     for name, spriteConfig in pairs(config.sprites) do
@@ -35,15 +39,24 @@ function love.load()
 end
 
 function love.update(dt)
-    chickenCreature:update(dt)
+    if jouage == 1 then
+        chickenCreature:update(dt)
+    end
 end
 
 function love.draw()
     background:draw()
 
     for name, sprite in pairs(sprites) do
-        if name ~= "chicken" then
-            sprite:draw()
+        if jouage == 1 then
+            if name == "poop" then
+                sprite:draw()
+                break
+            end
+        elseif jouage == -1 then
+            if name ~= "chicken" and name ~= "poop" then
+                sprite:draw()
+            end
         end
     end
 
@@ -51,15 +64,29 @@ function love.draw()
 end
 
 function love.mousepressed(x, y, button)
-    if button == 1 and sprites.poop:isHovered(x, y) then
-        if clickSound:isPlaying() then clickSound:stop() end
-        clickSound:play()
+    if button == 1 then
+        if sprites.poop:isHovered(x, y) then
+            if clickSound:isPlaying() then clickSound:stop() end
+            clickSound:play()
+        end
+
+        if jouage == -1 then
+            if sprites.jouation:isHovered(x, y) then
+                jouage = 1
+            elseif sprites.partirement:isHovered(x, y) then
+                love.event.quit()
+            end
+        end
     end
 end
 
 function love.keypressed(key)
     if key == "escape" then
-        love.event.quit()
+        if jouage == 1 then
+            jouage = -1
+        elseif jouage == -1 then
+            love.event.quit()
+        end
     end
 end
 
