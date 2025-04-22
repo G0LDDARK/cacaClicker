@@ -68,4 +68,13 @@ function Sprite:Anim()
     end
 end
 
+function Sprite:rotateX()
+    local originalData = self.imageData:clone()
+    self.imageData:mapPixel(function(x, y, r, g, b, a)
+        local newX = self.width - x - 1
+        return originalData:getPixel(newX, y)
+    end)
+    self.image = love.graphics.newImage(self.imageData)
+end
+
 return Sprite

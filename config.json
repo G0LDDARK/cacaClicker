@@ -35,8 +35,12 @@
             "state": "walking",
             "x": 150,   // Prends la priorité sur le x de la sprite
             "y": 21,    // Prends la priorité sur le y de la sprite
+            "endX": 200, // Position finale de la sprite
+            "endY": 21,  // Position finale de la sprite
             "velocityX": 10,
-            "velocityY": 0
+            "velocityY": 0,
+            "turnX": true, // Le sprite retourne en arrière quand X max est atteint
+            "turnY": false // Le sprite retourne en arrière quand Y max est atteint
         }
     },
     "fonts": {
