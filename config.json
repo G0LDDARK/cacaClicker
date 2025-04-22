@@ -22,19 +22,40 @@
             "scaleX": 0.5,
             "scaleY": 0.5
         },
+        "jouation": {
+            "asset": "assets/buttons/jouation.png",
+            "x": 75,
+            "y": 250,
+            "scaleX": 0.25,
+            "scaleY": 0.25
+        },
+        "optionnage": {
+            "asset": "assets/buttons/optionnage.png",
+            "x": 57,
+            "y": 350,
+            "scaleX": 0.25,
+            "scaleY": 0.25
+        },
+        "partirement": {
+            "asset": "assets/buttons/partirement.png",
+            "x": 52,
+            "y": 450,
+            "scaleX": 0.25,
+            "scaleY": 0.25
+        },
         "chicken": {
             "asset": "assets/spritesheets/chicken/ChickenWalking.png",
             "frameWidth": 20,
             "frameHeight": 21,
-            "x":150,  // Position initiale de la sprite
-            "y":21    // Position initiale de la sprite
+            "x":150,  // Position initiale du sprite
+            "y":21    // Position initiale du sprite
         }
     },
     "creatures": {
         "chicken": {
             "state": "walking",
-            "x": 150,   // Prends la priorité sur le x de la sprite
-            "y": 21,    // Prends la priorité sur le y de la sprite
+            "x": 150,   // Prends la priorité sur le x du sprite
+            "y": 21,    // Prends la priorité sur le y du sprite
             "velocityX": 10,
             "velocityY": 0
         }
