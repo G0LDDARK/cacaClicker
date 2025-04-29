@@ -31,21 +31,21 @@
         },
         "jouation": {
             "asset": "assets/buttons/jouation.png",
-            "x": 75,
+            "x": 110,
             "y": 250,
             "scaleX": 0.25,
             "scaleY": 0.25
         },
         "optionnage": {
             "asset": "assets/buttons/optionnage.png",
-            "x": 57,
+            "x": 92,
             "y": 350,
             "scaleX": 0.25,
             "scaleY": 0.25
         },
         "partirement": {
             "asset": "assets/buttons/partirement.png",
-            "x": 52,
+            "x": 87,
             "y": 450,
             "scaleX": 0.25,
             "scaleY": 0.25

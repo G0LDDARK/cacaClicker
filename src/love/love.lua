@@ -20,7 +20,7 @@ local clickMultiplier = 1
 function love.load()
     background = TiledSprite.new(Game.data.config.backgrounds.main)
 
-    font = love.graphics.newFont("assets/fonts/mainFont.ttf", 110)
+    font = love.graphics.newFont(Game.data.config.fonts.main.asset, 110)
     love.graphics.setFont(font)
 
     for name, spriteConfig in pairs(Game.data.config.sprites) do
