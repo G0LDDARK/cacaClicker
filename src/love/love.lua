@@ -65,16 +65,16 @@ end
 
 function love.mousepressed(x, y, button)
     if button == 1 then
-        if sprites.poop:isHovered(x, y) then
-            if clickSound:isPlaying() then clickSound:stop() end
-            clickSound:play()
-        end
-
         if jouage == -1 then
             if sprites.jouation:isHovered(x, y) then
                 jouage = 1
             elseif sprites.partirement:isHovered(x, y) then
                 love.event.quit()
+            end
+        else
+            if sprites.poop:isHovered(x, y) then
+                if clickSound:isPlaying() then clickSound:stop() end
+                clickSound:play()
             end
         end
     end
