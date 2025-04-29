@@ -19,12 +19,12 @@ Game.events =
 
 Game.musics =
 {
-    main = nil
+    main = love.audio.newSource("assets/musics/mainMusic.ogg", "stream")
 }
 
 Game.sounds =
 {
-    click = nil
+    click = love.audio.newSource("assets/sounds/click.ogg", "static")
 }
 
 Game.data =

@@ -23,12 +23,10 @@ function love.load()
 
     chickenCreature = Creature:new(Game.data.config.creatures.chicken, Game.data.config.sprites.chicken)
 
-    Game.musics.main = love.audio.newSource("assets/musics/mainMusic.ogg", "stream")
     Game.musics.main:setLooping(true)
     Game.musics.main:setVolume(0.5)
     Game.musics.main:play()
 
-    Game.sounds.click = love.audio.newSource("assets/sounds/click.ogg", "static")
 end
 
 function love.update(dt)
@@ -56,7 +54,6 @@ function love.draw()
     chickenCreature:draw()
 end
 
-
 function love.mousepressed(x, y, button)
     if button == Game.events.leftClic then
 
@@ -71,8 +68,8 @@ function love.mousepressed(x, y, button)
 
         elseif Game.data.currentState == Game.states.inGame then
             if Game.data.sprites.poop:isHovered(x, y) then
-                if Game.musics.click:isPlaying() then Game.musics.click:stop() end
-                Game.musics.click:play()
+                if Game.sounds.click:isPlaying() then Game.sounds.click:stop() end
+                Game.sounds.click:play()
             end
         end
 
