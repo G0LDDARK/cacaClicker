@@ -3,6 +3,4 @@
 -- main
 --
 
-require("src.window")
-require("src.love.love")
-require("src.love.run")
+require("src.core.main")

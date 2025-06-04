@@ -3,7 +3,7 @@
 -- window
 --
 
-local config = require("src.config")
+local config = require("src.core.config")
 
 function SetupWindow()
     love.window.setTitle("Caca Clicker")

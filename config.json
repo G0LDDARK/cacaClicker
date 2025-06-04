@@ -24,8 +24,8 @@
         },
         "toiletPaper": {
             "asset": "assets/toiletPaperSprite.png",
-            "x": 50,
-            "y": 50,
+            "x": 45,
+            "y": 500,
             "scaleX": 0.25,
             "scaleY": 0.25
         },

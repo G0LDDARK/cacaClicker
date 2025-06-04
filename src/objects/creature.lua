@@ -1,6 +1,11 @@
+--
+-- Caca Clicker
+-- creature.lua
+--
+
 local Creature = {}
 Creature.__index = Creature
-local Sprite = require("src.sprite")
+local Sprite = require("src.graphics.sprite")
 
 function Creature:new(creature, image)
     assert(image, "Image is nil in Creature.new")

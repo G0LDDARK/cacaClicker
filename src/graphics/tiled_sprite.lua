@@ -1,6 +1,6 @@
 --
 -- Caca Clicker
--- tiledSprite.lua
+-- tiled_sprite.lua
 --
 
 local TiledSprite = {}
